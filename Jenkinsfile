@@ -6,7 +6,7 @@ pipeline {
         stage('checkout') {
             steps {
                 echo 'git checkout stage'
-				git branch: 'main', url: 'https://github.com/devopstraininghub/mindcircuit17d.git'
+				git branch: 'main', url: 'https://github.com/jadalaramani/slack_tomcat_jenkins.git'
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to tomcat'
-				deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://54.160.144.88:8081/')], contextPath: 'insta', war: '**/*.war'
+				deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://3.217.10.33:8081/')], contextPath: 'slack', war: '**/*.war'
 				
             }
         }		
